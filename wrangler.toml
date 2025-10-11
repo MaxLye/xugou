@@ -5,6 +5,11 @@ compatibility_flags = ["nodejs_compat"]
 
 minify = true # 生产环境压缩代码
 
+# 设定自定义域名
+routes= [
+    { pattern = "status.ahlye.com", custom_domain = true }
+]
+
 # 添加定时触发器，每分钟执行一次监控检查
 [triggers]
 crons = ["* * * * *"]
@@ -13,8 +18,6 @@ crons = ["* * * * *"]
 binding = "DB"
 database_name = "${D1_DATABASE_NAME}" # 使用占位符
 database_id = "${D1_DATABASE_ID}"   # 使用占位符
-#database_name = "cf-xugou-db" # 使用占位符
-#database_id = "d949b789-6e40-4b42-9b5f-9ba2a970ebac" # 使用占位符
 
 [assets]
 binding = "ASSETS"
