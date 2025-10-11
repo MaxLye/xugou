@@ -113,6 +113,7 @@ func (r *DefaultReporter) ReportBatch(ctx context.Context, infoList []*model.Sys
 	}
 
 	reportURL := fmt.Sprintf("%s/api/agents/status", r.reporter.ServerURL)
+	log.Println("reportURL: ", reportURL)
 	reportPaylod, err := json.Marshal(infoList)
 
 	if err != nil {
