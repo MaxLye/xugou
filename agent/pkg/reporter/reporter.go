@@ -141,7 +141,6 @@ func (r *DefaultReporter) register(ctx context.Context, info *model.SystemInfo) 
 	log.Println("开始检查是否客户端已经注册，未注册将会自动注册")
 
 	registerURL := fmt.Sprintf("%s/api/agents/register", r.reporter.ServerURL)
-	log.Println("reportURL: ", reportURL)
 	registerPaylod := &model.RegisterPayload{
 		Token:       config.Token,
 		Name:        info.Hostname,
